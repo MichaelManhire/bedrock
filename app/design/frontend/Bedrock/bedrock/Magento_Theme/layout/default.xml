@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="footer">
+            <container name="footer_top" htmlTag="div" htmlClass="footer-top" before="-"/>
+            <container name="footer_bottom" htmlTag="div" htmlClass="footer-bottom" after="-">
+                <block class="Magento\Framework\View\Element\Template" name="footer_social" template="Magento_Theme::html/footer-social.phtml"/>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="footer_links" template="Magento_Theme::html/footer-navigation.phtml"/>
+
+        <move element="footer_links" destination="footer_top" before="-"/>
+        <move element="copyright" destination="footer_bottom" after="-"/>
+    </body>
+</page>
